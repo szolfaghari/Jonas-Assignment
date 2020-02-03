@@ -2,12 +2,12 @@
 
 The initial investigation of the data files shows that we will need to overcome below obstacles:
 
-(1) the limitation on the number of fields per table in SQL Server (max = 1024)
+(1) The limitation on the number of fields per table in SQL Server (max = 1024)
 
-(2) the max length of each record in SQL server  
+(2) The maximum length of each record in SQL server  
 
  
-My proposed structure is to break down the whole table into records each holding 1 piece of data, assuming the primary key for this is [Year] + [Unit_id]
+My proposed structure is to break down the whole table (spreadsheet) into records each holding 1 piece of data. Assuming the primary key for this is [Year] + [Unit_id] , I will add a **field_id** as a reference to the list of possible field names. This makes our approach flexible in case future files have different set of headers.  
 
 This might impact the performance a bit, but will make the solution more extendable in case we have more fields in the future.
 
