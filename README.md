@@ -32,7 +32,7 @@ This might impact the performance a bit, but will make the solution more extenda
 **Read data [GET]**
 
 * /api/values?year=**[YEAR1]**&unit_id=**[UNIT_ID1]**
-* /api/values?years_csv=**[YEAR1,Year2,...]**&ids_csv=**[UNIT_ID1,UNIT_ID2,...]**&fieldnames_csv=**[FIELDNAME1,FIELDNAME2,...]**
+* /api/values?years_csv=**[YEAR1,YEAR2,...]**&ids_csv=**[UNIT_ID1,UNIT_ID2,...]**&fieldnames_csv=**[FIELDNAME1,FIELDNAME2,...]**
 
 **ADD/Update  [POST]**
 
