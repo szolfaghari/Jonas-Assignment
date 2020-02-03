@@ -31,19 +31,19 @@ This might impact the performance a bit, but will make the solution more extenda
 
 **Read data [GET]**
 
-* /api/values?year=**[YEAR1]**&unit_id=<UNIT_ID>
-* /api/values?years_csv=<YEAR1,Year2,...>&ids_csv=<UNIT_ID1,UNIT_ID2,...>&fieldnames_csv=<FIELDNAME1,FIELDNAME2,...>
+* /api/values?year=**[YEAR1]**&unit_id=**[UNIT_ID1]**
+* /api/values?years_csv=**[YEAR1,Year2,...]**&ids_csv=**[UNIT_ID1,UNIT_ID2,...]**&fieldnames_csv=**[FIELDNAME1,FIELDNAME2,...]**
 
 **ADD/Update  [POST]**
 
-* /api/values?year=**[YEAR1]**&unit_id=[UNIT_ID]&field_name=<FIELDNAME>&value=<VALUE>
+* /api/values?year=**[YEAR1]**&unit_id=**[UNIT_ID1]**&field_name=**[FIELDNAME]**&value=**[VALUE]**
 
 **Delete  [DELETE]**
 
-* /api/values?year=**[YEAR1]**&unit_id=<UNIT_ID>&field_name=<FIELDNAME>
-* /api/values?year=**[YEAR1]**&unit_id=<UNIT_ID>
+* /api/values?year=**[YEAR1]**&unit_id=**[UNIT_ID1]**&field_name=**[FIELDNAME]**
+* /api/values?year=**[YEAR1]**&unit_id=**[UNIT_ID1]**
 * /api/values?year=**[YEAR1]**
-* /api/values?field_name=<FIELDNAME>
+* /api/values?field_name=**[FIELDNAME]**
 
 # Projects 
 
