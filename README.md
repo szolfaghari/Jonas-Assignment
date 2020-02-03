@@ -7,9 +7,7 @@ The initial investigation of the data files shows that we will need to overcome 
 (2) The maximum length of each record in SQL server  
 
  
-My proposed structure is to break down the whole table (spreadsheet) into records each holding 1 piece of data. Assuming the primary key for this is [Year] + [Unit_id] , I will add a **field_id** as a reference to the list of possible field names. This makes our approach flexible in case future files have different set of headers.  
-
-This might impact the performance a bit, but will make the solution more extendable in case we have more fields in the future.
+My proposed structure is to break down the whole table (spreadsheet) into records each holding 1 piece of data. Assuming the primary key for this is [Year] + [Unit_id] , I will add a **field_id** as a reference to the list of possible field names. This might impact the performance a bit, but will make the solution more extendable in case we have more headers in the future.
 
 
 * In order to keep the DB size smaller, I have assumed NULL and blank have the same meaning , so I am eliminating the record in such cases. (either by deleting or even not inserting in the first place)
