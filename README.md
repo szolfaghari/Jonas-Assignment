@@ -10,13 +10,13 @@ The initial investigation of the data files shows that we will need to overcome 
 My proposed approach is to break down the whole table (spreadsheet) into records each holding 1 piece of data. Assuming the primary key for this is **[year]** + **[unit_id]** , I will add a **[field_id]** as a reference to the list of possible field names. This might impact the performance a bit, but will make the structure more flexible in case we have more headers in the future.
 
 
-* In order to keep the DB size smaller, I have assumed NULL and blank have the same meaning , so I am eliminating the record in such cases. (either by deleting or even not inserting in the first place)
+* In order to keep the DB size smaller, I have assumed **NULL** and **blank** have the same meaning , so I am eliminating the record in such cases either by deleting or even not inserting in the first place.
 * I am always comparing the new value with the existing to make sure update happens only when it is necessary
 * For csv parsing, I am using a rather non-efficient approach. We can improve by using custom parser or any 3rd party parsing library.
 * Most of the data manipulation is taken care of in the stored procedure level.
-* I have compared the performance for the file reads and it seems multi treating does not help much with I/O  operations, so I kept it as a sequential loop.
-* As I am not familiar with the data I have taken a generic approach. If we dig deeper into the details, part of the approach might not make sense or will need to be revisited.
-* We can improve the performance by tweaking the indexes. However we need to know the ratio between reads vs writes
+* I have compared the performance for the file reads and it seems multi-threading does not help much with I/O  operations, so I kept it as a sequential loop.
+* As I am not familiar with the data, I have taken a generic approach. As we dig deeper into the details, part of the approach might not make sense or will need to be revisited. 
+* We can improve the performance by tweaking the indexes. However we need to know the ratio between reads and writes.  
 
 # API Guide 
 
