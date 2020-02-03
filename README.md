@@ -17,8 +17,8 @@ This might impact the performance a bit, but will make the solution more extenda
 * For csv parsing, I am using a rather non-efficient approach. We can improve by using custom parser or any 3rd party parsing library.
 * Most of the data manipulation is taken care of in the stored procedure level.
 * I have compared the performance for the file reads and it seems multi treating does not help much with I/O  operations, so I kept it as a sequential loop.
-* As I am not familliar with the data I have taken a generic apprach. If we dig deeper into the details, part of the approach might not make sense or will need to be revisited.
-* We can improve the performance by tweaking the indexes. However we need to know the balance between the frequeny of reads vs writes
+* As I am not familiar with the data I have taken a generic approach. If we dig deeper into the details, part of the approach might not make sense or will need to be revisited.
+* We can improve the performance by tweaking the indexes. However we need to know the ratio between reads vs writes
 
 
 # Optimization Ideas
@@ -47,13 +47,13 @@ This might impact the performance a bit, but will make the solution more extenda
 
 # Projects 
 
-Both projects can be found under <APP> foler in the repository. They are done with VB.net as per request and can be executed with minimal changes
+Both projects can be found under <APP> folder in the repository. They are done with VB.net as per request and can be executed with minimal changes
 (connectionstrings need to be tweaked for sure)
 
 * JonasAssignment (ConsoleApp) 
 * JonasAssignmentWebAPI
 
-A copy of DB backup has been included the the repository. it needs to be restored as **JonasDB** to the database.
+A copy of DB backup has been included the the repository. it needs to be restored as **JonasDB** to the database. This can be founf under <DB> folder in the repository. 
 
 
 
