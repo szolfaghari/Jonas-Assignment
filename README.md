@@ -1,4 +1,4 @@
-# Jonas-Assignment
+# Jonas-Assignment [2020-02-02]
 
 The initial investigation of the data files shows that we will need to overcome below obsticles:
 
