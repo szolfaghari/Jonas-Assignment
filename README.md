@@ -52,7 +52,7 @@ A copy of DB backup has been included the the repository. it needs to be restore
   * For the batch insert, we probably can do some grouping. I noticed there are a lot of NULLs and ZEROs. So we may handle them separately (and in one shot) 
   * For the batch insert, we can make a larger script and hit the DB every N records (or while the script size is safe)
   * For the batch insert, In case we need to redo (or refresh) files , we can delete all the year/unit_id combinations and call [add] instead of [addorupdate] depending of the nature of update.
-  * We need to keep track of the files, so after we are done with each file we rename them or move to another folder [processed]. Also add the filenames to a table in case the same file is fed into the system, we need to decide the action that needs to be taken
+  * We need to manage the folder containing the files, so after we are done with each file we rename them or move to another folder [processed]. Also will need to add the filenames to a table. In case the same file is fed into the system again we need to know the action that is to be taken.
   * We may need to use signal files to point the app on what files to pick up (that is something I have used in most of the file processing apps)
 
  
