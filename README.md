@@ -20,13 +20,6 @@ This might impact the performance a bit, but will make the solution more extenda
 * As I am not familiar with the data I have taken a generic approach. If we dig deeper into the details, part of the approach might not make sense or will need to be revisited.
 * We can improve the performance by tweaking the indexes. However we need to know the ratio between reads vs writes
 
-
-# Optimization Ideas
-  * For the batch insert, we probably can do some grouping. I noticed there are a lot of NULLs and ZEROs. so we may handle them separately all zeros in 1 batch
-  * For the batch insert, we can make a larger script and hit to DB every N records (or while the script size is OK)
-  * For the batch insert, we can delete all the year/unit_id combinations and call [add] instead of [addorupdate] depending of the nature of update.
-
-
 # API Guide 
 
 **Read data [GET]**
@@ -55,7 +48,10 @@ Both projects can be found under <APP> folder in the repository. They are done w
 
 A copy of DB backup has been included the the repository. it needs to be restored as **JonasDB** to the database. This can be founf under <DB> folder in the repository. 
 
-
+# Optimization Ideas
+  * For the batch insert, we probably can do some grouping. I noticed there are a lot of NULLs and ZEROs. so we may handle them separately all zeros in 1 batch
+  * For the batch insert, we can make a larger script and hit to DB every N records (or while the script size is OK)
+  * For the batch insert, we can delete all the year/unit_id combinations and call [add] instead of [addorupdate] depending of the nature of update.
 
  
 
