@@ -1,6 +1,6 @@
 # Jonas-Assignment [2020-02-02]
 
-The initial investigation of the data files shows that we will need to overcome below obsticles:
+The initial investigation of the data files shows that we will need to overcome below obstacles:
 
 (1) the limitation on the number of fields per table in SQL Server (max = 1024)
 
