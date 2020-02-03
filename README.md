@@ -16,7 +16,7 @@ My proposed approach is to break down the whole table (spreadsheet) into records
 * Most of the data manipulation is taken care of in the stored procedure level.
 * I have compared the performance for the file reads and it seems multi-threading does not help much with I/O  operations, so I kept it as a sequential loop.
 * As I am not familiar with the data, I have taken a generic approach. As we dig deeper into the details, part of the approach might not make sense or will need to be revisited. 
-* We can improve the performance by tweaking the indexes. However we need to know the ratio between reads and writes.  
+* We can improve the performance by tweaking the indexes. However we need to know the ratio between reads and writes in order to have a fair judgment.  
 
 # API Guide 
 
