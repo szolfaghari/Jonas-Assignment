@@ -1,0 +1,16 @@
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\JonasAssignment.exe.config
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\JonasAssignment.exe
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\JonasAssignment.pdb
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\JonasAssignment.xml
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.vbprojAssemblyReference.cache
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.Resources.resources
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.vbproj.GenerateResource.cache
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.vbproj.CoreCompileInputs.cache
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.exe
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.xml
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.pdb
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\EntityFramework.dll
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\EntityFramework.xml
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AsusAdmin\source\repos\JonasAssignment\JonasAssignment\obj\Debug\JonasAssignment.vbproj.CopyComplete

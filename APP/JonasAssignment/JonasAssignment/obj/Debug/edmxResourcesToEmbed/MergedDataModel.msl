@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MergedDataModelStoreContainer" CdmEntityContainer="MergedDataEntities">
+    <FunctionImportMapping FunctionImportName="AddFieldIfNotExisting" FunctionName="MergedDataModel.Store.AddFieldIfNotExisting" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateDataIfNotExisting" FunctionName="MergedDataModel.Store.AddOrUpdateDataIfNotExisting" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateValue" FunctionName="MergedDataModel.Store.AddOrUpdateValue" />
+    <FunctionImportMapping FunctionImportName="GetValueListJson" FunctionName="MergedDataModel.Store.GetValueListJson" />
+    <FunctionImportMapping FunctionImportName="GetValueListJsonEx" FunctionName="MergedDataModel.Store.GetValueListJsonEx">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MergedDataModel.GetValueListJsonEx_Result">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+          <ScalarProperty Name="field_name" ColumnName="field_name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetFieldNames" FunctionName="MergedDataModel.Store.GetFieldNames">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MergedDataModel.GetFieldNames_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="field_name" ColumnName="field_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

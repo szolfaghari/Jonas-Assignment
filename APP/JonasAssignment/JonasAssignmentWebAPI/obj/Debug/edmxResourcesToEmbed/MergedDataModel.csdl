@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tempModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MergedDataEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="AddFieldIfNotExisting" ReturnType="Collection(Int32)">
+      <Parameter Name="field_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddOrUpdateDataIfNotExisting">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="field_name" Mode="In" Type="String" />
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddOrUpdateValue">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="field_id" Mode="In" Type="Int32" />
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetValueListJson" ReturnType="Collection(String)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetValueListJsonEx" ReturnType="Collection(String)">
+      <Parameter Name="year_list" Mode="In" Type="String" />
+      <Parameter Name="unit_id_list" Mode="In" Type="String" />
+      <Parameter Name="field_list" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetValueListJsonEx_Result">
+    <Property Type="Int32" Name="year" Nullable="true" />
+    <Property Type="Int32" Name="unit_id" Nullable="true" />
+    <Property Type="String" Name="field_name" Nullable="true" />
+    <Property Type="String" Name="value" Nullable="true" />
+  </ComplexType>
+</Schema>

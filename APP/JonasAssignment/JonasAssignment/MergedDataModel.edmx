@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MergedDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="AddFieldIfNotExisting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="field_name" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="AddOrUpdateDataIfNotExisting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="unit_id" Type="int" Mode="In" />
+          <Parameter Name="field_name" Type="varchar(max)" Mode="In" />
+          <Parameter Name="value" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="AddOrUpdateValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="unit_id" Type="int" Mode="In" />
+          <Parameter Name="field_id" Type="int" Mode="In" />
+          <Parameter Name="value" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="GetFieldNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetValueListJson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="unit_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetValueListJsonEx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year_list" Type="varchar(max)" Mode="In" />
+          <Parameter Name="unit_id_list" Type="varchar(max)" Mode="In" />
+          <Parameter Name="field_list" Type="varchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="MergedDataModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MergedDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MergedDataEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="AddFieldIfNotExisting" ReturnType="Collection(Int32)">
+          <Parameter Name="field_name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddOrUpdateDataIfNotExisting">
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="unit_id" Mode="In" Type="Int32" />
+            <Parameter Name="field_name" Mode="In" Type="String" />
+            <Parameter Name="value" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddOrUpdateValue">
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="unit_id" Mode="In" Type="Int32" />
+            <Parameter Name="field_id" Mode="In" Type="Int32" />
+            <Parameter Name="value" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetValueListJson" ReturnType="Collection(String)">
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="unit_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetValueListJsonEx" ReturnType="Collection(MergedDataModel.GetValueListJsonEx_Result)">
+            <Parameter Name="year_list" Mode="In" Type="String" />
+            <Parameter Name="unit_id_list" Mode="In" Type="String" />
+            <Parameter Name="field_list" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetFieldNames" ReturnType="Collection(MergedDataModel.GetFieldNames_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetValueListJsonEx_Result">
+          <Property Type="Int32" Name="year" Nullable="true" />
+          <Property Type="Int32" Name="unit_id" Nullable="true" />
+          <Property Type="String" Name="field_name" Nullable="true" />
+          <Property Type="String" Name="value" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetFieldNames_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="field_name" Nullable="true" MaxLength="200" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MergedDataModelStoreContainer" CdmEntityContainer="MergedDataEntities" >
+          <FunctionImportMapping FunctionImportName="AddFieldIfNotExisting" FunctionName="MergedDataModel.Store.AddFieldIfNotExisting" />
+          <FunctionImportMapping FunctionImportName="AddOrUpdateDataIfNotExisting" FunctionName="MergedDataModel.Store.AddOrUpdateDataIfNotExisting" />
+          <FunctionImportMapping FunctionImportName="AddOrUpdateValue" FunctionName="MergedDataModel.Store.AddOrUpdateValue" />
+          <FunctionImportMapping FunctionImportName="GetValueListJson" FunctionName="MergedDataModel.Store.GetValueListJson" />
+          <FunctionImportMapping FunctionImportName="GetValueListJsonEx" FunctionName="MergedDataModel.Store.GetValueListJsonEx">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MergedDataModel.GetValueListJsonEx_Result">
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+                <ScalarProperty Name="field_name" ColumnName="field_name" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFieldNames" FunctionName="MergedDataModel.Store.GetFieldNames">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MergedDataModel.GetFieldNames_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="field_name" ColumnName="field_name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

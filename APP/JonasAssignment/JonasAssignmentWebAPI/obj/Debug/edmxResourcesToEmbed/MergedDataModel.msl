@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tempModelStoreContainer" CdmEntityContainer="MergedDataEntities">
+    <FunctionImportMapping FunctionImportName="AddFieldIfNotExisting" FunctionName="tempModel.Store.AddFieldIfNotExisting" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateDataIfNotExisting" FunctionName="tempModel.Store.AddOrUpdateDataIfNotExisting" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateValue" FunctionName="tempModel.Store.AddOrUpdateValue" />
+    <FunctionImportMapping FunctionImportName="GetValueListJson" FunctionName="tempModel.Store.GetValueListJson" />
+    <FunctionImportMapping FunctionImportName="GetValueListJsonEx" FunctionName="tempModel.Store.GetValueListJsonEx" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tempModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="AddFieldIfNotExisting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="field_name" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AddOrUpdateDataIfNotExisting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="unit_id" Type="int" Mode="In" />
+    <Parameter Name="field_name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="value" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AddOrUpdateValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="unit_id" Type="int" Mode="In" />
+    <Parameter Name="field_id" Type="int" Mode="In" />
+    <Parameter Name="value" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValueListJson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="unit_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetValueListJsonEx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year_list" Type="varchar(max)" Mode="In" />
+    <Parameter Name="unit_id_list" Type="varchar(max)" Mode="In" />
+    <Parameter Name="field_list" Type="varchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="tempModelStoreContainer" />
+</Schema>
