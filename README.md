@@ -40,13 +40,13 @@ This might impact the performance a bit, but will make the solution more extenda
 
 # Projects 
 
-Both projects can be found under <APP> folder in the repository. They are done with VB.net as per request and can be executed with minimal changes
+Both projects can be found under **[APP]** folder in the repository. They are done with VB.net as per request and can be executed with minimal changes
 (connectionstrings need to be tweaked for sure)
 
 * JonasAssignment (ConsoleApp) 
 * JonasAssignmentWebAPI
 
-A copy of DB backup has been included the the repository. it needs to be restored as **JonasDB** to the database. This can be founf under <DB> folder in the repository. 
+A copy of DB backup has been included the the repository. it needs to be restored as **JonasDB** to the database. This can be found under **[DB]** folder in the repository. 
 
 # Optimization Ideas
   * For the batch insert, we probably can do some grouping. I noticed there are a lot of NULLs and ZEROs. So we may handle them separately (and in one shot) 
